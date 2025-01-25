@@ -1,0 +1,28 @@
+.filter {
+    width: 100%;
+    height: 100%;
+}
+.form {
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    &__name {
+
+    }
+    &__date-picker {
+        
+    }
+    &__status {
+        
+    }
+    &__button {
+        margin-bottom: 1rem;
+    }
+}
+
