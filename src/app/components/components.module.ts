@@ -11,11 +11,12 @@ import { PipesModule } from '../pipes/pipes.module';
 
 
 
+
 @NgModule({
   declarations: [ 
     UserDetailsComponent, 
     FilterComponent, TableComponent,
-  ],
+   ],
   imports: [
     CommonModule,
     AngularMaterialModule,

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { IFilterOptions } from '../../interfaces/user/filter-options.interface';
 
 interface Food {
   value: string;
@@ -13,9 +14,25 @@ interface Food {
   styleUrl: './filter.component.scss'
 })
 export class FilterComponent {
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
+
+
+  filterOptions: IFilterOptions = {
+    name: undefined,
+    startDate: undefined,
+    endDate: undefined,
+    status: undefined,
+
+  }
+
+  statusList = [
+    { value: true, viewValue: 'Ativo' },
+    { value: false, viewValue: 'Inativo' }
+  ]
+
+  @Output('onFilter') OnfilterEmitt = new EventEmitter<IFilterOptions>();
+
+  onClickButton() {
+    this.OnfilterEmitt.emit(this.filterOptions);
+  } 
+
 }
